@@ -170,7 +170,7 @@ a {
     transform: translateY(100%);
   }
   100% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
 }
 
@@ -179,7 +179,7 @@ a {
     justify-content: space-around;
     width: 100%;
     background-color: var(--yellow);
-    border-radius: 0 8rem 0 0;
+    border-radius: 0 12rem 0 0;
     padding-top: 3rem;
     animation: 2.5s footer 0.5s ease-in-out forwards;
 }
@@ -187,9 +187,11 @@ a {
 @keyframes footer {
     0% {
         transform: translateY(100%);
+        opacity: 0;
     }
     100% {
         transform: translateY(0);
+        opacity: 1;
     } 
 }
 
@@ -198,7 +200,7 @@ a {
     height: 14rem;
     background-color: var(--blue);
     align-self: start;
-    border-radius: 50%;
+    border-radius: 45%;
     padding-bottom: 5rem;
 }
 
@@ -276,4 +278,100 @@ a {
   50% {
     transform: scale(1);
   }
+}
+
+.modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    z-index: 4;
+    display: flex;
+    place-items: center;
+}
+
+.modal-content {
+    background-color: whitesmoke;
+    width: 50%;
+    height: 50%;
+    border-radius: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.modal-slider {
+    width: 30rem;
+    height: 20rem;
+    transform-style: preserve-3d;
+}
+
+.cards {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    background-color: var(--yellow);
+    border-radius: 2rem;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+#radio1:checked ~ .cards #card1,
+#radio2:checked ~ .cards #card2,
+#radio3:checked ~ .cards #card3 {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    z-index: 1;
+}
+
+#radio1:checked ~ .cards #card2,
+#radio2:checked ~ .cards #card3,
+#radio3:checked ~ .cards #card1 {
+    transform: translateX(40%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+}
+
+#radio1:checked ~ .cards #card3,
+#radio2:checked ~ .cards #card1,
+#radio3:checked ~ .cards #card2 {
+    transform: translateX(-40%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+}
+
+#radio1, #radio2, #radio3 {
+    display: none;
+}
+
+.modal--close {
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    font-size: 3rem;
+    color: gray;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+
+.modal-content img:hover {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.visible {
+    display: grid !important;
 }

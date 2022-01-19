@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
+    <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
     <title>SuperHeroes</title>
   </head>
   <body>
@@ -21,7 +22,7 @@
           </ul>
         </nav>
         <section class="main-content">
-          <span>Diseña tu</span>
+          <span>¡Diseña tu</span>
           <span>Súper Héroe!</span>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum
@@ -35,7 +36,7 @@
           <div></div>
         </section>
         <section class="footer">
-          <div>
+          <div id="button1">
             <img src="https://i.ibb.co/tKWqw8J/spiderman.png" alt="spiderman" />
           </div>
           <div>
@@ -53,7 +54,41 @@
         <div></div>
       </section>
       <!-- Modal -->
-      <section></section>
+      <section class="modal hidden">
+        <div class="modal-content">
+          <div class="modal-slider">
+            <input type="radio" name="slider1" id="radio1" checked/>
+            <input type="radio" name="slider1" id="radio2" />
+            <input type="radio" name="slider1" id="radio3" />
+            <div class="cards">
+              <label for="radio1" id="card1" class="card"></label>
+              <img src="" alt="" />
+              <label for="radio2" id="card2" class="card"></label>
+              <img src="" alt="" />
+              <label for="radio3" id="card3" class="card"></label>
+              <img src="" alt="" />
+            </div>
+          </div>
+          <div class="modal--close">
+            <span class="iconify" data-icon="carbon:close-outline"></span>
+          </div>
+        </div>
+      </section>
     </div>
+    <script>
+      const modal = document.querySelector(".modal");
+      const button1 = document.querySelector("#button1");
+      const close = document.querySelector(".modal--close");
+
+      button1.addEventListener("click", () => {
+        modal.classList.remove("hidden");
+        modal.classList.add("visible");
+      });
+
+      close.addEventListener("click", () => {
+        modal.classList.add("hidden");
+        modal.classList.remove("visible");
+      });
+    </script>
   </body>
 </html>
