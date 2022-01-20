@@ -1,5 +1,5 @@
 # Súper Héroes Lego 🦸‍♂️
-Maquetación de un **landing page** con rediseño de la página web de Súper Héroes de Lego.
+Maquetación de una **landing page** con rediseño de la página web de Súper Héroes de Lego.
 Las animaciones web y microinteracciones son realizadas en **CSS**. 
 
 ![captura-landing-page](https://i.ibb.co/M2r9VC6/Captura1.png)
